@@ -1,79 +1,332 @@
 <!DOCTYPE html>
-<html lang="nl">
 <head>
-	<meta charset="utf-8">
-	<title>jQuery UI Selectable - Default functionality</title>
+    <meta charset="utf-8">
+    <title>Ranking</title>
 
-	<!-- JQuery -->	
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <!-- JQuery -->	
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-	<script src="js/data.json"></script>
-	<link rel="stylesheet" href="css/custom.css">
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .head { text-align: center; vertical-align: middle; line-height: 60px; height: 60px; background-color: #F2F2F2; text-transform: uppercase; font-weight: bold; }
+        .margin-top { margin-top: 30px; }
+        .input { margin: 0 auto;}
+        .sub { margin: 20px auto;}
+        .sub .title { margin: 10px auto; font-weight: bold;}
+        .number { width: 18%; text-align: center; }
+        .name { width: 35%; }
+        .amount { width: 35%; }
+        .code { margin: 0 auto; }
+        .result { margin: 0 auto; }
+        #html-result {display: none;}
+        #toggle-button { float:right; background: transparent; color: #C0C0C0; border:0px; border-left: 1px solid #ccc; padding:0px 20px;}
+        #toggle-button:hover { color: #000000; }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="row margin-top">
+            <div class="col-sm-6">
+                <div class="head">input</div>
+                <div class="input margin-top" id="input-fields">
 
-	<div class="container">
-		<div class="row mt">
+                    <div class="sub">
+                        <div class="title">Persoonlijke Uren</div>
+                        <input value="1." class="number" disabled>
+                        <input type="text" class="name" id="hoursName1" placeholder="Naam" autofocus>
+                        <input type="text" class="amount" id="hoursAmount1" placeholder="Uren">
+                        <input value="2." class="number" disabled>
+                        <input type="text" class="name" id="hoursName2" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount2" placeholder="Uren">
+                        <input value="3." class="number" disabled>
+                        <input type="text" class="name" id="hoursName3" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount3" placeholder="Uren">
+                        <input value="4." class="number" disabled>
+                        <input type="text" class="name" id="hoursName4" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount4" placeholder="Uren">
+                        <input value="5." class="number" disabled>
+                        <input type="text" class="name" id="hoursName5" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount5" placeholder="Uren">
+                        <input value="6." class="number" disabled>
+                        <input type="text" class="name" id="hoursName6" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount6" placeholder="Uren">
+                        <input value="7." class="number" disabled>
+                        <input type="text" class="name" id="hoursName7" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount7" placeholder="Uren">
+                        <input value="8." class="number" disabled>
+                        <input type="text" class="name" id="hoursName8" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount8" placeholder="Uren">
+                        <input value="9." class="number" disabled>
+                        <input type="text" class="name" id="hoursName9" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount9" placeholder="Uren">
+                        <input value="10." class="number" disabled>
+                        <input type="text" class="name" id="hoursName10" placeholder="Naam">
+                        <input type="text" class="amount" id="hoursAmount10" placeholder="Uren">
+                    </div>
+                    <div class="sub">
+                        <div class="title">Persoonlijke Marges</div>
+                        <input value="1." class="number" disabled>
+                        <input type="text" class="name" id="margesName1" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount1" placeholder="Marge">
+                        <input value="2." class="number" disabled>
+                        <input type="text" class="name" id="margesName2" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount2" placeholder="Marge">
+                        <input value="3." class="number" disabled>
+                        <input type="text" class="name" id="margesName3" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount3" placeholder="Marge">
+                        <input value="4." class="number" disabled>
+                        <input type="text" class="name" id="margesName4" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount4" placeholder="Marge">
+                        <input value="5." class="number" disabled>
+                        <input type="text" class="name" id="margesName5" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount5" placeholder="Marge">
+                        <input value="6." class="number" disabled>
+                        <input type="text" class="name" id="margesName6" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount6" placeholder="Marge">
+                        <input value="7." class="number" disabled>
+                        <input type="text" class="name" id="margesName7" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount7" placeholder="Marge">
+                        <input value="8." class="number" disabled>
+                        <input type="text" class="name" id="margesName8" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount8" placeholder="Marge">
+                        <input value="9." class="number" disabled>
+                        <input type="text" class="name" id="margesName9" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount9" placeholder="Marge">
+                        <input value="10." class="number" disabled>
+                        <input type="text" class="name" id="margesName10" placeholder="Naam">
+                        <input type="text" class="amount" id="margesAmount10" placeholder="Marge">
+                    </div>
 
-			<div class="col-sm-4">
-				<div class="head">input</div>
-				<div class="input">
-					<div class="table-responsive">
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Persoon</th>
-									<th>Marge</th>
-									<th>Actie</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="user.Place"></td>
-									<td class="user.Name"></td>
-									<td class="user.Amount"></td>
-									<td class="user.Adjustments"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="head">code</div>
-				<div class="code">
-					code
-					<pre>code</pre>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="head">result</div>
-				<div class="output">
-					code
-					<pre>code</pre>
-				</div>
-			</div>
+                    <div class="sub">
+                        <div class="title">Team Marges</div>
+                        <input value="1." class="number" disabled>
+                        <input type="text" class="name" id="teamName1" placeholder="Vestiging">
+                        <input type="text" class="amount" id="teamAmount1" placeholder="Marge">
+                        <input value="2." class="number" disabled>
+                        <input type="text" class="name" id="teamName2" placeholder="Vestiging">
+                        <input type="text" class="amount" id="teamAmount2" placeholder="Marge">
+                        <input value="3." class="number" disabled>
+                        <input type="text" class="name" id="teamName3" placeholder="Vestiging">
+                        <input type="text" class="amount" id="teamAmount3" placeholder="Marge">
+                    </div>
+                </div>
+            </div> <!-- End column -->
+            <div class="col-sm-6">
+                <div class="head">
+                    <button id="toggle-button">Toggle</button>
+                    Output
+                </div>
+                <div class="output">
+<pre id="html-result">
+<style type="text/css">
+    #ranking thead tr th { font-weight: bold; }
+    #ranking tbody td:first-child { width: 35px; }
+    #ranking tbody td .star { background-image: url("/public_images/Files/intranet_files/star.png"); }
+    #ranking tbody td:nth-child(2) { width: 115px; }
+    #ranking tbody td:nth-child(3) { width: 55px; color: #FF9933; font-weight: bold;}
+    #ranking .marge-locations tbody td:nth-child(2) { width: 200px; }
+    #ranking .marge-locations tbody td:nth-child(3) { width: 80px; color: #FF9933; font-weight: bold; }
+</style>
+<div id="ranking">
+    <!-- UREN RECRUITER -->
+    <div class="hours-recruiters fl">
+        <table>
+            <thead>
+                <tr>
+                    <th>NR.</th>
+                    <th>Naam</th>
+                    <th>UREN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="star">1.</td>
+                    <td><div id="hoursName1Result"></div></td>
+                    <td><div id="hoursAmount1Result"></div></td>
+                </tr>
+                <tr>
+                    <td class="star">2.</td>
+                    <td><div id="hoursName2Result"></div></td>
+                    <td><div id="hoursAmount2Result"></div></td>
+                </tr>
+                <tr>
+                    <td class="star">3.</td>
+                    <td><div id="hoursName3Result"></div></td>
+                    <td><div id="hoursAmount3Result"></div></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td><div id="hoursName4Result"></div></td>
+                    <td><div id="hoursAmount4Result"></div></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td><div id="hoursName5Result"></div></td>
+                    <td><div id="hoursAmount5Result"></div></td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td><div id="hoursName6Result"></div></td>
+                    <td><div id="hoursAmount6Result"></div></td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td><div id="hoursName7Result"></div></td>
+                    <td><div id="hoursAmount7Result"></div></td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td><div id="hoursName8Result"></div></td>
+                    <td><div id="hoursAmount8Result"></div></td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td><div id="hoursName9Result"></div></td>
+                    <td><div id="hoursAmount9Result"></div></td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td><div id="hoursName10Result"></div></td>
+                    <td><div id="hoursAmount10Result"></div></td>
+                </tr>
+            </tbody>
+        </table>
+        &nbsp;
+    </div>
+    <!-- MARGE  RECRUITER -->
+    <div class="marge-recruiters fr">
+        <table>
+            <thead>
+                <tr>
+                    <th>NR.</th>
+                    <th>Naam</th>
+                    <th>MARGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="star">1.</td>
+                    <td><div id="margesName1Result"></div></td>
+                    <td><div id="margesAmount1Result"></div></td>
+                </tr>
+                <tr>
+                    <td class="star">2.</td>
+                    <td><div id="margesName2Result"></div></td>
+                    <td><div id="margesAmount2Result"></div></td>
+                </tr>
+                <tr>
+                    <td class="star">3.</td>
+                    <td><div id="margesName3Result"></div></td>
+                    <td><div id="margesAmount3Result"></div></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td><div id="margesName4Result"></div></td>
+                    <td><div id="margesAmount4Result"></div></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td><div id="margesName5Result"></div></td>
+                    <td><div id="margesAmount5Result"></div></td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td><div id="margesName6Result"></div></td>
+                    <td><div id="margesAmount6Result"></div></td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td><div id="margesName7Result"></div></td>
+                    <td><div id="margesAmount7Result"></div></td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td><div id="margesName8Result"></div></td>
+                    <td><div id="margesAmount8Result"></div></td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td><div id="margesName9Result"></div></td>
+                    <td><div id="margesAmount9Result"></div></td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td><div id="margesName10Result"></div></td>
+                    <td><div id="margesAmount10Result"></div></td>
+                </tr>
+            </tbody>
+        </table>
+        &nbsp;
+    </div>
+    <!-- MARGE VESTIGING -->
+    <div class="marge-locations clear">
+        <table>
+            <thead>
+            <tr>
+                <th>NR.</th>
+                <th>Naam</th>
+                <th>MARGE</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="star">1.</td>
+                    <td><div id="teamName1Result"></div></td>
+                    <td><div id="teamAmount1Result"></div></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td class="star"><div id="teamName2Result"></div></td>
+                    <td><div id="teamAmount2Result"></div></td>
+                </tr>
+                <tr>
+                    <td class="star">3.</td>
+                    <td><div id="teamName3Result"></div></td>
+                    <td><div id="teamAmount3Result"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</pre>
+<pre id="copy-result"></pre>
+                </div>
+            </div> <!-- END collumn -->
+        </div> <!-- END row -->
+    </div> <!-- END container -->
 
-		</div>
-	</div>
+    <script type="text/javascript">
 
-	<script>		
-		$(function() {
+        (function ($) {
+            'use strict';
 
+            var htmlElement = $('#html-result'),
+            copyElement = $('#copy-result');
 
+            copyElement.text(htmlElement.html());
 
-		});
-	</script>
+            $('#toggle-button').on('click', function (e) {
+                htmlElement.toggle();
+                copyElement.toggle();
+            });
+
+            $('input', '#input-fields').on('keyup', function (e) {
+                var el = $(e.target);
+
+                $('#' + el.attr('id') + 'Result', htmlElement).text(el.val());
+
+                copyElement.text(htmlElement.html());
+            });
+
+        })(jQuery);
+
+    </script>
 
 </body>
 </html>
