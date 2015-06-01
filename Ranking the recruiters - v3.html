@@ -119,19 +119,21 @@
             </div> <!-- End column -->
             <div class="col-sm-6">
                 <div class="head">
-                    <button id="toggle-button">Toggle</button>
+                    <button id="toggle-button">Voorbeeld</button>
                     Output
                 </div>
                 <div class="output">
 <pre id="html-result">
 <style type="text/css">
-    #ranking thead tr th { font-weight: bold; }
-    #ranking tbody td:first-child { width: 35px; }
-    #ranking tbody td .star { background-image: url("/public_images/Files/intranet_files/star.png"); }
-    #ranking tbody td:nth-child(2) { width: 115px; }
-    #ranking tbody td:nth-child(3) { width: 55px; color: #FF9933; font-weight: bold;}
-    #ranking .marge-locations tbody td:nth-child(2) { width: 200px; }
-    #ranking .marge-locations tbody td:nth-child(3) { width: 80px; color: #FF9933; font-weight: bold; }
+    #ranking tr th { font-weight: bold; }
+    #ranking td:first-child { width: 35px; }
+    #ranking .star { background: url("http://www.youngcapital.nl/public_images/Files/intranet_files/star.png") center no-repeat; }
+    .hours-recruiters td:nth-child(2) { width: 115px; }
+    .hours-recruiters td:nth-child(3) { width: 55px; color: #FF9933; font-weight: bold;}
+    .marge-recruiters td:nth-child(2) { width: 115px; }
+    .marge-recruiters td:nth-child(3) { width: 55px; color: #FF9933; font-weight: bold;}
+    .marge-locations td:nth-child(2) { width: 160px; }
+    .marge-locations td:nth-child(3) { width: 80px; color: #FF9933; font-weight: bold; }
 </style>
 <div id="ranking">
     <!-- UREN RECRUITER -->
@@ -281,8 +283,8 @@
                     <td><div id="teamAmount1Result"></div></td>
                 </tr>
                 <tr>
-                    <td>2.</td>
-                    <td class="star"><div id="teamName2Result"></div></td>
+                    <td class="star">2.</td>
+                    <td><div id="teamName2Result"></div></td>
                     <td><div id="teamAmount2Result"></div></td>
                 </tr>
                 <tr>
