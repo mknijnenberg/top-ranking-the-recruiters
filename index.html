@@ -246,8 +246,8 @@
 
     document.addEventListener("DOMContentLoaded", function() {
 
-      var
-      personalHours = [
+
+      var personalHours = [
       {label: '', type: ''},
       {label: '', type: ''},
       {label: '', type: ''},
@@ -268,13 +268,13 @@
         rowHeaders: true,
         colWidths: [200, 175],
         collumns: [
-        { data: 'label'},
-        { data: 'type' } 
+        { data: 'label' },
+        { data: 'type'  } 
         ]
       });
 
-      var
-      personalMarges = [
+
+      var personalMarges = [
       {label: '', type: ''},
       {label: '', type: ''},
       {label: '', type: ''},
@@ -305,8 +305,8 @@
         ]
       });
 
-      var
-      teamMarges = [
+
+      var teamMarges = [
       {label: '', type: ''},
       {label: '', type: ''},
       {label: '', type: ''},
@@ -320,43 +320,45 @@
         rowHeaders: true,
         colWidths: [200, 175],
         collumns: [
-        { data: 'label' },
-        {
-          data: 'type',
-          type: 'numeric',
-          format: '0,0.00 $',
-          language: 'nl'
-        }
-        ]
-      });
+        { data: 'label' 
+      },
+      {
+        data: 'type',
+        type: 'numeric',
+        format: '0,0.00 $',
+        language: 'nl'
+      }
+      ]
+    });
+
 
     });
 
 
-    (function ($) {
-      'use strict';
+(function ($) {
+  'use strict';
 
-      var htmlElement = $('#html-result'),
-      copyElement = $('#copy-result');
+  var htmlElement = $('#html-result'),
+  copyElement = $('#copy-result');
 
-      copyElement.text(htmlElement.html());
+  copyElement.text(htmlElement.html());
 
-      $('#toggle-button').on('click', function (e) {
-        htmlElement.toggle();
-        copyElement.toggle();
-      });
+  $('#toggle-button').on('click', function (e) {
+    htmlElement.toggle();
+    copyElement.toggle();
+  });
 
-      $('input', '#input-fields').on('keyup', function (e) {
-        var el = $(e.target);
+  $('input', '#input-fields').on('keyup', function (e) {
+    var el = $(e.target);
 
-        $('#' + el.attr('id') + 'Result', htmlElement).text(el.val());
+    $('#' + el.attr('id') + 'Result', htmlElement).text(el.val());
 
-        copyElement.text(htmlElement.html());
-      });
+    copyElement.text(htmlElement.html());
+  });
 
-    })(jQuery);
+})(jQuery);
 
-  </script>
+</script>
 
 </body>
 </html>
